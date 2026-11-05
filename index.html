@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#07090a">
+<title>Gallos de Lava — 4 vs 4</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game" aria-label="Arena de Gallos de Lava"></canvas>
+
+<div id="safe-probe" aria-hidden="true"></div>
+
+<section id="menu" class="overlay">
+  <div class="menu-glow"></div>
+  <button id="soundBtn" class="sound-toggle" type="button" aria-label="Silenciar o activar el sonido" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/>
+      <path class="wave" d="M16 8.2c1.7 1.8 1.7 5.8 0 7.6M18.6 5.6c3.7 3.7 3.6 9.1 0 12.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path class="slash" d="M15.5 9.5l5 5M20.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <span id="soundLabel">SONIDO</span>
+  </button>
+  <div class="menu-inner">
+    <header class="hero">
+      <div class="kicker"><span class="dot"></span> ARENA DE OBSIDIANA · 4 VS 4</div>
+      <h1>GALLOS<span>DE LAVA</span></h1>
+      <p class="tagline">Cuerpos de acero. Plumas de fuego. Huevos de obsidiana.</p>
+    </header>
+
+    <div class="section-label"><span>ELIGE TU GALLO</span><span class="rule"></span><span class="tiny">2 CUERPOS POR EQUIPO</span></div>
+    <div id="roster" class="roster"></div>
+
+    <div class="weapons">
+      <div class="weapon-card">
+        <div class="wicon egg-icon"><i></i></div>
+        <div>
+          <b>CORTA DISTANCIA</b>
+          <p>Huevos negros con lava verde. Estallan en charcas que derriten el suelo.</p>
+        </div>
+      </div>
+      <div class="weapon-card">
+        <div class="wicon plume-icon"><i></i></div>
+        <div>
+          <b>LARGA DISTANCIA</b>
+          <p>Plumas ígneas perforantes: más rápidas, más lejos y queman al impactar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="playBtn" class="play" aria-label="Play">
+        <span class="play-main">JUGAR</span>
+        <span class="play-sub">4 VS 4 · PRIMERO A 10 BAJAS</span>
+      </button>
+      <div class="mobile-hint">Doble joystick: izquierda mover · derecha apuntar y disparar</div>
+    </div>
+
+    <footer class="menu-foot">
+      <span><kbd>WASD</kbd> mover</span>
+      <span><kbd>RATÓN</kbd> apuntar</span>
+      <span><kbd>CLICK</kbd> lanzar</span>
+      <span><kbd>SHIFT</kbd> dash</span>
+      <span><kbd>ESPACIO</kbd> especial</span>
+      <span><kbd>M</kbd> sonido</span>
+    </footer>
+  </div>
+</section>
+
+<section id="result" class="overlay result hidden">
+  <div class="result-inner">
+    <div id="resultKicker" class="kicker">FIN DE LA RONDA</div>
+    <h2 id="resultTitle">¡VICTORIA!</h2>
+    <div id="resultScore" class="result-score">10 — 6</div>
+    <p id="resultSub">La arena huele a azufre y plumas.</p>
+    <div class="result-actions">
+      <button id="rematchBtn" class="play small"><span class="play-main">REVANCHA</span></button>
+      <button id="menuBtn" class="ghost">CAMBIAR GALLO</button>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
